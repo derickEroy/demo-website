@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { rawUserSchema } from "../validators/schemas";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useMutation } from "@tanstack/react-query";
+import { useDispatch } from 'react-redux';
+import { userActions } from '../../../core/configs/reduxConfig';
 import axiosInstance from "../../../core/configs/axiosConfig";
-import type { AxiosError } from 'axios';
-import type { IRawUser } from "server/src/domain/types/dtos";
+import type { AxiosError, AxiosResponse } from 'axios';
+import type { IRawUser, ISafeUser } from "server/src/domain/types/dtos";
 import type { IError } from 'server/src/domain/types/errors';
 
 export default function Form() {
@@ -15,10 +17,18 @@ export default function Form() {
     const { register, handleSubmit, setError, formState: { errors }} = useForm<IRawUser>({
         resolver: zodResolver(rawUserSchema)
     });
+
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
     
     const { mutate } = useMutation({
         async mutationFn(data: IRawUser) {
             return await axiosInstance.post('/users/register', data);
+        },
+        onSuccess(response: AxiosResponse<ISafeUser>) {
+            dispatch(userActions.setValue(response.data));
+            navigate({ to: '/' });
         },
         onError(error: AxiosError<IError>) {
             const data = error.response?.data;
