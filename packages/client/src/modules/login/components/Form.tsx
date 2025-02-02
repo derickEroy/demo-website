@@ -52,7 +52,7 @@ export default function Form() {
             </div>
             <div>
                 <label htmlFor='password'>Password</label>
-                <input type={show ? 'text' : 'password'} />
+                <input {...register('password')} type={show ? 'text' : 'password'} />
                 <button type='button' onClick={() => setShow(p => !p)}>Show</button>
                 { errors?.password && <small>{errors.password.message}</small> }
             </div>
