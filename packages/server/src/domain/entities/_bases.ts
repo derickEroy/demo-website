@@ -23,11 +23,11 @@ export class BaseEntity<T extends Record<string, any>> {
         if (error) {
             const cause: TCause = {};
 
-            for (const issue of error.issues) {
+            error.issues.forEach((issue) => {
                 const key = issue.path.join('.');
                 const value = issue.path.reduce((acc: any, cur) => acc[cur], data);
                 cause[key] = typeof value === 'object' ? JSON.stringify(value) : String(value);
-            }
+            })
 
             throw new SchemaError(
                 `Invalid ${this.constructor.name} document data`,

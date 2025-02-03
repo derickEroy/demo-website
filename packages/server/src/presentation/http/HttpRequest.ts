@@ -1,20 +1,15 @@
-import type { IRequest } from '@domain/types';
+import type { IRequest, TRequestProps } from '@domain/types';
 
-export class HttpRequest<
-    Body = unknown,
-    Headers = unknown,
-    Query = unknown,
-    Params = unknown
-> implements IRequest<Body, Headers, Query, Params> {
-    body: Body;
-    headers: Headers;
-    query: Query;
-    params: Params;
+export class HttpRequest<T extends TRequestProps> implements IRequest<T> {
+    body: T['body'];
+    headers: T['headers'];
+    query: T['query'];
+    params: T['params'];
 
-    constructor(data: IRequest<Body, Headers, Query, Params>) {
+    constructor(data: IRequest<T>) {
         this.body = data.body;
         this.headers = data.headers;
         this.query = data.query;
-        this.params = data.params
+        this.params = data.params;
     }
 }

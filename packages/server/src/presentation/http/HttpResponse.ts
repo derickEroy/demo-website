@@ -1,4 +1,4 @@
-import { DatabaseError, SchemaError, ProhibitedError, InternalError } from '@presentation';
+import { DatabaseError, SchemaError, ProhibitedError, InternalError } from '@presentation/errorObjects';
 import type { IResponse, ISessionData, TQuery, TCause, TCredentials } from '@domain/types';
 
 export class HttpResponse<T> implements IResponse<T> {

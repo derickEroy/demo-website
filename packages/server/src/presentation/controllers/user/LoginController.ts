@@ -1,10 +1,11 @@
-import { HttpResponse, DatabaseError, ProhibitedError } from "@presentation";
-import type { TUserLoginController, ILoginCredentials, IRequest, TUserLoginUseCase } from "@domain";
+import { HttpResponse } from "@presentation/http";
+import { DatabaseError, ProhibitedError } from "@presentation/errorObjects";
+import type { TUserLoginController, ILoginCredentials, IRequest, TUserLoginUseCase } from "@domain/types";
 
 export class LoginController implements TUserLoginController {
     constructor(private _useCase: TUserLoginUseCase) {}
 
-    async execute(data: IRequest<ILoginCredentials>) {
+    async execute(data: IRequest<{ body: ILoginCredentials }>) {
         try {
             const result = await this._useCase.execute(data.body);
 

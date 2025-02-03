@@ -1,10 +1,11 @@
-import { HttpResponse, DatabaseError, SchemaError } from '@presentation';
-import type { IRawUser, TUserRegisterController, TUserRegisterUseCase, IRequest } from '@domain';
+import { HttpResponse } from '@presentation/http';
+import { DatabaseError, SchemaError } from '@presentation/errorObjects';
+import type { IRawUser, TUserRegisterController, TUserRegisterUseCase, IRequest } from '@domain/types';
 
 export class RegisterController implements TUserRegisterController {
     constructor(private _useCase: TUserRegisterUseCase) {}
 
-    async execute(data: IRequest<IRawUser>) {
+    async execute(data: IRequest<{ body: IRawUser }>) {
         try {
             const result = await this._useCase.execute(data.body);
 

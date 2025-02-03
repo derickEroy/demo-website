@@ -11,3 +11,5 @@ export interface ILoginCredentials {
     email: string;
     password: string;
 }
+
+export type TUserSearchDetails = ISafeUser;

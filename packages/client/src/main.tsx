@@ -5,7 +5,7 @@ import { routeTree } from './routeTree.gen'
 import { createRouter, RouterProvider } from '@tanstack/react-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Provider } from 'react-redux'
-import { store } from './core/configs/reduxConfig';
+import { store } from './core/configs/redux/store';
 
 const router = createRouter({ routeTree });
 

@@ -1,0 +1,17 @@
+import { IUser, IUserRepository, TGetUsersUseCase, TUserSearchDetails } from "@domain/types";
+import { Filter } from "mongodb";
+
+export class GetUsersUseCase implements TGetUsersUseCase {
+    constructor(private _userRepository: IUserRepository) {}
+
+    async execute(data: TUserSearchDetails) {
+        const query = Object.entries(data).reduce((acc: Filter<IUser>, [key, value]) => {
+            acc[key] = { $regex: value, $options: 'i' };
+            return acc;
+        }, {});
+
+        const documents = await this._userRepository.findMany(query);
+
+        return documents.map((document) => document.toObject());
+    }
+}

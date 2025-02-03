@@ -1,9 +1,11 @@
-import Search from "./Search";
+import UserSearchBar from "./UserSearchBar";
+import UserSearchList from "./UserSearchList";
 
 export default function LeftBar() {
     return (
         <div>
-            <Search />
+            <UserSearchBar />
+            <UserSearchList />
         </div>
     )
 }

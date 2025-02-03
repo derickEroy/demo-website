@@ -5,7 +5,7 @@ import { rawUserSchema } from "../validators/schemas";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useMutation } from "@tanstack/react-query";
 import { useDispatch } from 'react-redux';
-import { userActions } from '../../../core/configs/reduxConfig';
+import { setUser } from "../../../core/configs/redux/slices/persistedState";
 import axiosInstance from "../../../core/configs/axiosConfig";
 import type { AxiosError, AxiosResponse } from 'axios';
 import type { IRawUser, ISafeUser } from "server/src/domain/types/dtos";
@@ -13,24 +13,22 @@ import type { IError } from 'server/src/domain/types/errors';
 
 export default function Form() {
     const [show, setShow] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const { register, handleSubmit, setError, formState: { errors }} = useForm<IRawUser>({
         resolver: zodResolver(rawUserSchema)
     });
-
-    const dispatch = useDispatch();
-
-    const navigate = useNavigate();
     
     const { mutate } = useMutation({
-        async mutationFn(data: IRawUser) {
+        mutationFn: async (data: IRawUser) => {
             return await axiosInstance.post('/users/register', data);
         },
-        onSuccess(response: AxiosResponse<ISafeUser>) {
-            dispatch(userActions.setValue(response.data));
+        onSuccess: (response: AxiosResponse<ISafeUser>) => {
+            dispatch(setUser(response.data));
             navigate({ to: '/' });
         },
-        onError(error: AxiosError<IError>) {
+        onError: (error: AxiosError<IError>) => {
             const data = error.response?.data;
             const query = data?.query;
 

@@ -1,10 +1,11 @@
 import { Router } from 'express';
-import { expressAdapter } from '../adapters/express';
-import { userRegisterService } from '@app/services';
-import { userLoginService } from '@app/services';
+import { expressAdapter } from '@infrastructure/adapters';
+import { registerService, loginService, getUsersService } from '@app/services';
 
 export const userRouter = Router();
 
-userRouter.post('/register', expressAdapter(userRegisterService));
+userRouter.get('/getUsers', expressAdapter(getUsersService));
 
-userRouter.post('/login', expressAdapter(userLoginService));
+userRouter.post('/register', expressAdapter(registerService));
+
+userRouter.post('/login', expressAdapter(loginService));
