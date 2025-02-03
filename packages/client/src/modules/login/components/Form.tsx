@@ -1,3 +1,4 @@
+import api from '../../../core/configs/axiosConfig';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -6,7 +7,6 @@ import { useMutation } from '@tanstack/react-query';
 import { useDispatch } from 'react-redux';
 import { loginCredentialsSchema } from '../validators/schemas';
 import { setUser } from '../../../core/configs/redux/slices/persistedState';
-import axiosInstance from '../../../core/configs/axiosConfig';
 import type { AxiosError, AxiosResponse } from 'axios';
 import type { ILoginCredentials, ISafeUser } from 'server/src/domain/types/dtos';
 import type { IError } from 'server/src/domain/types/errors';
@@ -16,13 +16,18 @@ export default function Form() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const { register, handleSubmit, setError, formState: { errors }} = useForm<ILoginCredentials>({
+    const {
+        register,
+        handleSubmit,
+        setError,
+        formState: { errors }
+    } = useForm<ILoginCredentials>({
         resolver: zodResolver(loginCredentialsSchema)
     });
 
     const { mutate } = useMutation({
-        mutationFn: async (data: ILoginCredentials) => {
-            return await axiosInstance.post('/users/login', data);
+        mutationFn: async(data: ILoginCredentials) => {
+            return await api.post('/users/login', data);
         },
         onSuccess: (response: AxiosResponse<ISafeUser>) => {
             dispatch(setUser(response.data));
@@ -31,11 +36,11 @@ export default function Form() {
         onError: (error: AxiosError<IError>) => {
             const data = error.response?.data;
             const credentials = data?.credentials;
-
+        
             if (credentials && credentials.includes('password')) {
                 setError('password', { message: data.message });
             }
-
+        
             setError('root', { message: 'Login failed.' });
         }
     });

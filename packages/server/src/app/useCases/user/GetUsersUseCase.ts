@@ -1,5 +1,5 @@
-import { IUser, IUserRepository, TGetUsersUseCase, TUserSearchDetails } from "@domain/types";
-import { Filter } from "mongodb";
+import type { Filter } from "mongodb";
+import type { IUser, IUserRepository, TGetUsersUseCase, TUserSearchDetails } from "@domain/types";
 
 export class GetUsersUseCase implements TGetUsersUseCase {
     constructor(private _userRepository: IUserRepository) {}
