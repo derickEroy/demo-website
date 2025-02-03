@@ -1,4 +1,4 @@
-import { InternalError } from "../presentation/errorObjects/InternalError";
+import { InternalError } from "@presentation/errorObjects";
 
 function assertEnvVar(name: string, value: string | undefined): asserts value is string {
     if (value === undefined) {

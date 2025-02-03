@@ -1,4 +1,4 @@
-import type { TCause, ISchemaError } from '../../domain/types/errors';
+import type { TCause, ISchemaError } from '@domain/types';
 
 export class SchemaError extends Error implements ISchemaError {
     constructor(

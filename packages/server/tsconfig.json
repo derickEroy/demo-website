@@ -1,4 +1,8 @@
 {
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],
+    "files": true
+  },
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
@@ -28,8 +32,30 @@
     "module": "commonjs",                                /* Specify what module code is generated. */
     // "rootDir": "./",                                  /* Specify the root folder within your source files. */
     // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
-    // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
-    // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
+    "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
+    "paths": {
+      "@app": ["./src/app/_exports"],
+      "@app/dtos": ["./src/app/dtos/_exports"],
+      "@app/services": ["./src/app/services/_exports"],
+      "@app/useCases": ["./src/app/useCases/_exports"],
+      "@configs": ["./src/configs/_exports"],
+      "@domain": ["./src/domain/_exports"],
+      "@domain/entities": ["./src/domain/entities/_exports"],
+      "@domain/types": ["./src/domain/types/_exports"],
+      "@domain/valueObjects": ["./src/domain/valueObjects/_exports"],
+      "@infrastructure": ["./src/infrastructure/_exports"],
+      "@infrastructure/adapters": ["./src/infrastructure/adapters/_exports"],
+      "@infrastructure/databases": ["./src/infrastructure/databases/_exports"],
+      "@infrastructure/middlewares": ["./src/infrastructure/middlewares/_exports"],
+      "@infrastructure/providers": ["./src/infrastructure/providers/_exports"],
+      "@infrastructure/repositories": ["./src/infrastructure/repositories/_exports"],
+      "@infrastructure/routers": ["./src/infrastructure/routers/_exports"],
+      "@infrastructure/validators": ["./src/infrastructure/validators/_exports"],
+      "@presentation": ["./src/presentation/_exports"],
+      "@presentation/controllers": ["./src/presentation/controllers/_exports"],
+      "@presentation/errorObjects": ["./src/presentation/errorObjects/_exports"],
+      "@presentation/http": ["./src/presentation/http/_exports"]
+    },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
     // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */

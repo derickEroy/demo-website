@@ -1,9 +1,5 @@
-import { DatabaseError } from '../errorObjects/DatabaseError';
-import { SchemaError } from '../errorObjects/SchemaError';
-import { ProhibitedError } from '../errorObjects/ProhibitedError';
-import { InternalError } from '../errorObjects/InternalError';
-import type { IResponse, ISessionData } from '../../domain/types/http';
-import type { TQuery, TCause, TCredentials } from '../../domain/types/errors';
+import { DatabaseError, SchemaError, ProhibitedError, InternalError } from '@presentation';
+import type { IResponse, ISessionData, TQuery, TCause, TCredentials } from '@domain/types';
 
 export class HttpResponse<T> implements IResponse<T> {
     httpCode: number;

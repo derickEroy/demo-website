@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@tanstack/router-devtools": "^1.99.0",
-    "@tanstack/router-plugin": "^1.99.0"
+    "@tanstack/router-plugin": "^1.99.0",
+    "tsconfig-paths": "^4.2.0"
   }
 }

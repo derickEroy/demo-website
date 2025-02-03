@@ -1,7 +1,5 @@
-import type { HttpRequest } from "../../presentation/http/HttpRequest";
-import type { HttpResponse } from "../../presentation/http/HttpResponse";
-import type { ILoginCredentials, IRawUser, ISafeUser } from "./dtos"
-import type { IDatabaseError, IInternalError } from "./errors";
+import type { HttpRequest, HttpResponse } from "@presentation/http";
+import type { ILoginCredentials, IRawUser, ISafeUser, IDatabaseError, IInternalError } from "@domain/types"
 
 export interface IController<T, U> {
     execute(data: HttpRequest<T>): Promise<HttpResponse<U | IInternalError>>;

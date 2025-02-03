@@ -1,5 +1,5 @@
 import bcryptjs from 'bcryptjs';
-import type { IHasher } from '../../domain/types/providers';
+import type { IHasher } from '@domain/types';
 
 export class Hasher implements IHasher {
     hash(str: string, salt?: number): string {

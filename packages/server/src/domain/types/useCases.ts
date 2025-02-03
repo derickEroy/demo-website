@@ -1,4 +1,4 @@
-import type { ILoginCredentials, IRawUser, ISafeUser } from './dtos';
+import type { ILoginCredentials, IRawUser, ISafeUser } from '@domain/types';
 
 export interface IUseCase<T, U> {
     execute(data: T): Promise<U>;

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { expressAdapter } from '../adapters/express';
-import { userRegisterService } from '../../application/services/user/RegisterService';
-import { userLoginService } from '../../application/services/user/LoginService';
+import { userRegisterService } from '@app/services';
+import { userLoginService } from '@app/services';
 
 export const userRouter = Router();
 

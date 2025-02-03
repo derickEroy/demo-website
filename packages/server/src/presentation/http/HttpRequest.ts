@@ -1,4 +1,4 @@
-import type { IRequest } from '../../domain/types/http';
+import type { IRequest } from '@domain/types';
 
 export class HttpRequest<
     Body = unknown,

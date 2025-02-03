@@ -1,4 +1,4 @@
-import type { IDatabaseError, TQuery } from "../../domain/types/errors";
+import type { IDatabaseError, TQuery } from "@domain/types";
 
 export class DatabaseError extends Error implements IDatabaseError {
     constructor(

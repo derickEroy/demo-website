@@ -1,7 +1,5 @@
 import type { Collection, Document, Filter, ObjectId, OptionalUnlessRequiredId, WithId } from 'mongodb';
-import type { IBaseRepository } from '../../domain/types/repositories';
-import type { TOptionalDocumentExtensions } from '../../domain/types/utilities';
-import type { BaseEntity } from '../../domain/entities/_bases';
+import type { IBaseRepository, TOptionalDocumentExtensions, BaseEntity } from '@domain';
 
 export class BaseRepository<T extends Document, Entity extends BaseEntity<T>> implements IBaseRepository<T> {
     constructor(private _collection: Collection<T>, private _entity: new (data: TOptionalDocumentExtensions<T>) => Entity) {}

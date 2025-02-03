@@ -1,5 +1,4 @@
 import type { Document } from 'mongodb';
-import type { IRawUser } from './dtos';
-import type { IDocumentExtensions } from './extensions';
+import type { IRawUser, IDocumentExtensions } from '@domain/types';
 
 export interface IUser extends IRawUser, IDocumentExtensions, Document {}

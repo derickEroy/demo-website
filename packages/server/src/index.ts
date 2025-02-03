@@ -8,10 +8,13 @@ import express from 'express';
 import cors from 'cors';
 import session from 'express-session';
 import store from 'connect-mongo';
-import { port, secretKey } from './configs/env';
-import { client, connect } from './infrastructure/databases/mongo';
-import { userRouter } from './infrastructure/routers/userRouter';
-import { globalErrorHandler } from './infrastructure/middlewares/globalErrorHandler';
+import { port, secretKey } from '@configs';
+import {
+    client as dbClient,
+    connect as dbConnect,
+    userRouter,
+    globalErrorHandler
+} from '@infrastructure';
 
 (async () => {
     const app = express();
@@ -30,14 +33,14 @@ import { globalErrorHandler } from './infrastructure/middlewares/globalErrorHand
             maxAge: 1000 * 60 * 60 * 24 * 7,
             sameSite: true
         },
-        store: store.create({ client })
+        store: store.create({ client: dbClient })
     }));
     app.use('/users', userRouter);
     app.use(globalErrorHandler);
 
     const server = http.createServer(app);
 
-    await connect();
+    await dbConnect();
 
     server.listen(port, () => console.log(`Server listening at http://localhost:${port}`));
 })();

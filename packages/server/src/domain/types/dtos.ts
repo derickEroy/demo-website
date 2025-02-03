@@ -1,4 +1,4 @@
-import type { IDocumentExtensions } from './extensions';
+import type { IDocumentExtensions } from '@domain/types';
 
 export interface IRawUser {
     email: string;
