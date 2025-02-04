@@ -1,7 +1,6 @@
-import { BaseEntity, User } from '@domain/entities';
+import { BaseEntity, User, Chat } from '@domain/entities';
 import type { Filter, ObjectId, OptionalUnlessRequiredId } from 'mongodb';
 import type { IChat, IUser } from '@domain/types';
-import { Chat } from '../entities/Chat';
 
 export interface IBaseRepository<T extends Record<string, any>, Entity extends BaseEntity<T>> {
     insertOne(data: OptionalUnlessRequiredId<T>): Promise<ObjectId>;
