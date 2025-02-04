@@ -1,5 +1,6 @@
 import { HttpResponse } from "@presentation/http";
 import type { IRawChat, IRequest, TCreateChatUseCase } from "@domain/types";
+import { SchemaError } from "@presentation/errorObjects";
 
 export class CreateChatController {
     constructor(private _useCase: TCreateChatUseCase) {}
@@ -13,7 +14,11 @@ export class CreateChatController {
                 body: result
             });
         } catch (error) {
-            return HttpResponse.internalError('An unexpected error occurred when creating chat');
+            if (error instanceof SchemaError) {
+                return HttpResponse.schemaError(422, error.message, error.cause);
+            } else {
+                return HttpResponse.internalError('An unexpected error occurred when creating chat');
+            }
         }
     }
 }
