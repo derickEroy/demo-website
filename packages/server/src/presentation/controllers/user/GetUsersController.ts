@@ -5,11 +5,15 @@ export class GetUsersController implements TGetUsersController {
     constructor(private _useCase: TGetUsersUseCase) {}
 
     async execute(data: IRequest<{ query: TUserSearchDetails }>) {
-        const result = await this._useCase.execute(data.query);
+        try {
+            const result = await this._useCase.execute(data.query);
 
-        return new HttpResponse({
-            httpCode: 200,
-            body: result
-        });
+            return new HttpResponse({
+                httpCode: 200,
+                body: result
+            });
+        } catch (error) {
+            return HttpResponse.internalError('An unexpected error occurred when getting users');
+        }
     }
 }

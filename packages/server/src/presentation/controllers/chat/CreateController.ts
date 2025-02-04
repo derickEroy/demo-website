@@ -13,7 +13,7 @@ export class CreateChatController {
                 body: result
             });
         } catch (error) {
-
+            return HttpResponse.internalError('An unexpected error occurred when creating chat');
         }
     }
 }

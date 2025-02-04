@@ -10,7 +10,7 @@ import session from 'express-session';
 import store from 'connect-mongo';
 import { port, secretKey } from '@configs';
 import { client as dbClient, connect as dbConnect } from '@infrastructure/databases';
-import { userRouter } from '@infrastructure/routers';
+import { userRouter, chatRouter } from '@infrastructure/routers';
 import {  globalErrorHandler } from '@infrastructure/middlewares';
 
 (async () => {
@@ -33,6 +33,7 @@ import {  globalErrorHandler } from '@infrastructure/middlewares';
         store: store.create({ client: dbClient })
     }));
     app.use('/users', userRouter);
+    app.use('/chats', chatRouter);
     app.use(globalErrorHandler);
 
     const server = http.createServer(app);
