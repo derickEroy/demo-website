@@ -1,13 +1,13 @@
 import { userSchema } from '@infrastructure/validators';
 import { Email, Password } from '@domain/valueObjects';
 import { BaseEntity } from '@domain/entities';
-import type { IUser, TOptionalDocumentExtensions } from '@domain/types';
+import type { IDocumentExtensions, IRawUser, IUser } from '@domain/types';
 
 export class User extends BaseEntity<IUser> {
     email: Email;
-    password: Password
+    password: Password;
 
-    constructor(data: TOptionalDocumentExtensions<IUser>) {
+    constructor(data: IRawUser & Partial<IDocumentExtensions>) {
         super(data, userSchema);
 
         this.email = new Email(data.email);

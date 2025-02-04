@@ -1,5 +1,11 @@
 import type { ObjectId } from 'mongodb';
-import type { TRequestProps } from '@domain/types';
+
+export interface TRequestProps {
+    body?: unknown;
+    headers?: unknown;
+    query?: unknown;
+    params?: unknown
+}
 
 export interface IRequest<T extends TRequestProps> {
     body: T['body'];
