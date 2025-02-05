@@ -1,6 +1,6 @@
 import { BaseEntity } from "@domain/entities";
 import { chatSchema } from "@infrastructure/validators";
-import type { ObjectId } from "mongodb";
+import { ObjectId } from "mongodb";
 import type { IChat, IDocumentExtensions, IRawChat } from "@domain/types";
 
 export class Chat extends BaseEntity<IChat> {
@@ -9,7 +9,9 @@ export class Chat extends BaseEntity<IChat> {
     constructor(data: IRawChat & Partial<IDocumentExtensions>) {
         super(data, chatSchema);
 
-        this.participants = data.participants;
+        this.participants = data.participants.map((id) => {
+            return typeof id === 'string' ? new ObjectId(id as string) : id;
+        });
 
         this.validate();
     }

@@ -6,7 +6,7 @@ import { CreateChatController } from "@presentation/controllers";
 export const createChatService = new CreateChatController(
     new CreateChatUseCase(
         new ChatRepository(
-            getCollection('users')
+            getCollection('chats')
         )
     )
 );

@@ -1,5 +1,5 @@
 import api from "../../../core/configs/axiosConfig";
-import { setUser } from "../../../core/configs/redux/slices/persistedState";
+import { setUser } from "../../../core/configs/reduxConfig/slices/persistedState";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux';

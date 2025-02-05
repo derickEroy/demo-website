@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setSearchedUsers } from "../../../core/configs/redux/slices/tempState";
+import { setSearchedUsers } from "../../../core/configs/reduxConfig/slices/tempState";
 import axiosInstance from "../../../core/configs/axiosConfig";
 
 export default function UserSearchBar() {
@@ -32,6 +32,10 @@ export default function UserSearchBar() {
       
 
     return (
-        <input type='text' placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
+        <input
+            type='text'
+            placeholder='Search'
+            onChange={(e) => setSearch(e.target.value)}
+        />
     )
 }

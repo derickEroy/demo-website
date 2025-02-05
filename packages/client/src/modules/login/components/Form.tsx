@@ -6,7 +6,7 @@ import { Link, useNavigate } from '@tanstack/react-router';
 import { useMutation } from '@tanstack/react-query';
 import { useDispatch } from 'react-redux';
 import { loginCredentialsSchema } from '../validators/schemas';
-import { setUser } from '../../../core/configs/redux/slices/persistedState';
+import { setUser } from '../../../core/configs/reduxConfig/slices/persistedState';
 import type { AxiosError, AxiosResponse } from 'axios';
 import type { ILoginCredentials, ISafeUser } from 'server/src/domain/types/dtos';
 import type { IError } from 'server/src/domain/types/errors';
