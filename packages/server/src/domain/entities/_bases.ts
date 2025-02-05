@@ -35,4 +35,8 @@ export class BaseEntity<T extends Record<string, any>> {
             );
         }
     }
+
+    toObject() {
+        return { ...this };
+    }
 }

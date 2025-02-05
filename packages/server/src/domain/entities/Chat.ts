@@ -19,8 +19,4 @@ export class Chat extends BaseEntity<IChat> {
     validate() {
         super.validate(this.toObject());
     }
-
-    toObject() {
-        return { ...this };
-    }
 }

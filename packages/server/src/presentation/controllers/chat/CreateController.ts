@@ -1,8 +1,8 @@
 import { HttpResponse } from "@presentation/http";
-import type { IRawChat, IRequest, TCreateChatUseCase } from "@domain/types";
 import { SchemaError } from "@presentation/errorObjects";
+import type { IRawChat, IRequest, TCreateChatController, TCreateChatUseCase } from "@domain/types";
 
-export class CreateChatController {
+export class CreateChatController implements TCreateChatController {
     constructor(private _useCase: TCreateChatUseCase) {}
 
     async execute(data: IRequest<{ body: IRawChat }>) {

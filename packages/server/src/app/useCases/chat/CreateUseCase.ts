@@ -1,7 +1,7 @@
 import { Chat } from "@domain/entities";
-import type { IRawChat, IChatRepository } from "@domain/types";
+import type { IRawChat, IChatRepository, TGetChatUseCase } from "@domain/types";
 
-export class CreateChatUseCase {
+export class CreateChatUseCase implements TGetChatUseCase {
     constructor(private _chatRepository: IChatRepository) {}
 
     async execute(data: IRawChat) {

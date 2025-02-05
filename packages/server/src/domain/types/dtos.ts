@@ -13,8 +13,8 @@ export interface ILoginCredentials {
     password: string;
 }
 
-export type TUserSearchDetails = ISafeUser;
+export interface IUserQuery extends ISafeUser {};
 
-export interface IRawChat{
+export interface IRawChat {
     participants: ObjectId[];
 }

@@ -10,8 +10,10 @@ assertEnvVar('PORT', process.env.PORT);
 assertEnvVar('DB_URI', process.env.DB_URI);
 assertEnvVar('DB_NAME', process.env.DB_NAME);
 assertEnvVar('SECRET_KEY', process.env.SECRET_KEY);
+assertEnvVar('CLIENT_URL', process.env.CLIENT_URL);
 
 export const port = process.env.PORT;
 export const dbUri = process.env.DB_URI;
 export const dbName = process.env.DB_NAME;
 export const secretKey = process.env.SECRET_KEY;
+export const clientUrl = process.env.CLIENT_URL;

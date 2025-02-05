@@ -1,10 +1,10 @@
 import type { Filter } from "mongodb";
-import type { IUser, IUserRepository, TGetUsersUseCase, TUserSearchDetails } from "@domain/types";
+import type { IUser, IUserRepository, TGetUsersUseCase, IUserQuery } from "@domain/types";
 
 export class GetUsersUseCase implements TGetUsersUseCase {
     constructor(private _userRepository: IUserRepository) {}
 
-    async execute(data: TUserSearchDetails) {
+    async execute(data: IUserQuery) {
         const query = Object.entries(data).reduce((acc: Filter<IUser>, [key, value]) => {
             acc[key] = { $regex: value, $options: 'i' };
             return acc;
