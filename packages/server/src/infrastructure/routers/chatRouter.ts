@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { expressAdapter } from '@infrastructure/adapters';
-import { createService } from '@app/services';
-import { getChatService } from 'src/app/services/chat/GetChatService';
+import { createService, getChatService } from '@app/services';
 
 export const chatRouter = Router();
 

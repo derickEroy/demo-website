@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useProtectRoute } from '../core/customHooks/useProtectRoute'
-import IndexPage from '../modules/index/pages/IndexPage';
+import LeftBar from '../modules/index/components/LeftBar';
+import Chatbox from '../modules/index/components/Chatbox';
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -8,5 +9,10 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   useProtectRoute('/login', true);
-  return <IndexPage />
+  return (
+    <div className="grid grid-cols-[auto_1fr]">
+        <LeftBar />
+        <Chatbox />
+    </div>
+  );
 }

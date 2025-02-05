@@ -1,9 +1,9 @@
-import MessageInputs from "./MessageInputs";
+import ChatInputs from "./ChatInputs";
 
 export default function Chatbox() {
     return (
         <div className="p-4">
-            <MessageInputs />
+            <ChatInputs />
         </div>
     )
 }

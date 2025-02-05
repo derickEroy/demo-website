@@ -1,4 +1,4 @@
-export default function MessageInputs() {
+export default function ChatInputs() {
     return (
         <div>
             <input type='text' placeholder='Enter message' />

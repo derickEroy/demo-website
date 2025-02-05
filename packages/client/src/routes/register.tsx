@@ -1,6 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 import { useProtectRoute } from '../core/customHooks/useProtectRoute';
-import RegisterPage from '../modules/register/pages/RegisterPage'
+import Header from '../modules/register/components/Header';
+import Form from '../modules/register/components/Form';
 
 export const Route = createFileRoute('/register')({
   component: RouteComponent,
@@ -8,5 +9,12 @@ export const Route = createFileRoute('/register')({
 
 function RouteComponent() {
   useProtectRoute('/', false);
-  return <RegisterPage />;
+  return (
+    <div>
+      <Header />
+      <div>
+          <Form />
+      </div>
+    </div>
+  );
 }
