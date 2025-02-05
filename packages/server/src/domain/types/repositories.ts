@@ -1,6 +1,6 @@
-import { BaseEntity, User } from '@domain/entities';
+import { BaseEntity, User, Chat } from '@domain/entities';
 import type { Filter, ObjectId, OptionalUnlessRequiredId } from 'mongodb';
-import type { IUser } from '@domain/types';
+import type { IChat, IUser } from '@domain/types';
 
 export interface IBaseRepository<T extends Record<string, any>, Entity extends BaseEntity<T>> {
     insertOne(data: OptionalUnlessRequiredId<T>): Promise<ObjectId>;
@@ -11,3 +11,5 @@ export interface IBaseRepository<T extends Record<string, any>, Entity extends B
 export interface IUserRepository extends IBaseRepository<IUser, User> {
     findByEmail(email: string): Promise<User | null>
 }
+
+export interface IChatRepository extends IBaseRepository<IChat, Chat> {}

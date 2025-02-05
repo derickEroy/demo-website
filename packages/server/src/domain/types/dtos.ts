@@ -1,3 +1,4 @@
+import type { ObjectId } from 'mongodb';
 import type { IDocumentExtensions } from '@domain/types';
 
 export interface IRawUser {
@@ -13,3 +14,7 @@ export interface ILoginCredentials {
 }
 
 export type TUserSearchDetails = ISafeUser;
+
+export interface IRawChat{
+    participants: ObjectId[];
+}

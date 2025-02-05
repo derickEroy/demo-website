@@ -1,12 +1,12 @@
 import type { Collection, Document, Filter, ObjectId, OptionalUnlessRequiredId, WithId } from 'mongodb';
-import type { IBaseRepository, TOptionalDocumentExtensions } from '@domain/types';
+import type { IBaseRepository } from '@domain/types';
 import type { BaseEntity } from '@domain/entities';
 
 export class BaseRepository<T extends Document, Entity extends BaseEntity<T>> implements IBaseRepository<T, Entity> {
-    constructor(private _collection: Collection<T>, private _entity: new (data: TOptionalDocumentExtensions<T>) => Entity) {}
+    constructor(private _collection: Collection<T>, private _entity: new (data: WithId<T>) => Entity) {}
 
     private _toEntity(document: WithId<T>) {
-        return new this._entity(document as T);
+        return new this._entity(document);
     }
 
     async insertOne(data: OptionalUnlessRequiredId<T>): Promise<ObjectId> {
