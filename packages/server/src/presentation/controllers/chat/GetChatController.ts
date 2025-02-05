@@ -1,6 +1,6 @@
-import type { IChat, IRequest, TGetChatController, TGetChatUseCase } from "@domain/types";
 import { DatabaseError } from "@presentation/errorObjects";
 import { HttpResponse } from "@presentation/http";
+import type { IChat, IRequest, TGetChatController, TGetChatUseCase } from "@domain/types";
 
 export class GetChatController implements TGetChatController {
     constructor(private _useCase: TGetChatUseCase) {}

@@ -1,4 +1,4 @@
-export * from './chat/CreateChatService';
+export * from './chat/CreateService';
 export * from './user/GetUsersService';
 export * from './user/LoginService';
 export * from './user/RegisterService';
