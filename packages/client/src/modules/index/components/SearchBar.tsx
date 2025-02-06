@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { setSearchedUsers } from "../../../core/configs/reduxConfig/slices/tempState";
 import axiosInstance from "../../../core/configs/axiosConfig";
 
-export default function UserSearchBar() {
+export default function SearchBar() {
     const [search, setSearch] = useState('');
     const dispatch = useDispatch();
 

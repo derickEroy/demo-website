@@ -3,7 +3,7 @@ import { useNavigate } from "@tanstack/react-router";
 import type { RootState } from "../../../core/configs/reduxConfig/store";
 import type { ISafeUser } from "server/src/domain/types/dtos";
 
-export default function UserSearchList() {
+export default function SearchList() {
     const searchedUsers = useSelector((state: RootState) => state.tempState.searchedUsers);
     const navigate = useNavigate();
 
