@@ -7,4 +7,3 @@ export * from './http';
 export * from './providers';
 export * from './repositories';
 export * from './useCases';
-export * from './utilities';

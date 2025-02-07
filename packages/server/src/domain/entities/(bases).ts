@@ -1,8 +1,7 @@
 import { ZodSchema } from 'zod';
 import { ObjectId } from 'mongodb';
-import { SchemaError } from '../../presentation/errorObjects/SchemaError';
-import type { IDocumentExtensions } from '../types/extensions';
-import type { TCause } from '../types/errors';
+import { SchemaError } from '@presentation/errorObjects';
+import type { IDocumentExtensions, TCause } from '@domain/types';
 
 export class BaseEntity<T extends Record<string, any>> {
     _id: ObjectId;
