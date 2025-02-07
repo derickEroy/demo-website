@@ -1,7 +1,7 @@
-import { BaseEntity } from "@domain/entities";
-import { chatSchema } from "@infrastructure/validators";
+import { BaseEntity } from "src/domain/entities/[exports]";
+import { chatSchema } from "src/infrastructure/validators/[exports]";
 import { ObjectId } from "mongodb";
-import type { IChat, IDocumentExtensions, IRawChat } from "@domain/types";
+import type { IChat, IDocumentExtensions, IRawChat } from "src/domain/types/[exports]";
 
 export class Chat extends BaseEntity<IChat> {
     participants: ObjectId[];

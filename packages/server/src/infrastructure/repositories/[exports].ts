@@ -1,3 +1,3 @@
-export * from './_bases';
+export * from './[bases]';
 export * from './ChatRepository';
 export * from './UserRepository';

@@ -1,7 +1,7 @@
-import { userSchema } from '@infrastructure/validators';
-import { Email, Password } from '@domain/valueObjects';
-import { BaseEntity } from '@domain/entities';
-import type { IDocumentExtensions, IRawUser, IUser } from '@domain/types';
+import { userSchema } from 'src/infrastructure/validators/[exports]';
+import { Email, Password } from 'src/domain/valueObjects/[exports]';
+import { BaseEntity } from 'src/domain/entities/[exports]';
+import type { IDocumentExtensions, IRawUser, IUser } from 'src/domain/types/[exports]';
 
 export class User extends BaseEntity<IUser> {
     email: Email;

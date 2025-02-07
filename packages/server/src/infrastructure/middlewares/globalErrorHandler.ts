@@ -1,4 +1,4 @@
-import { InternalError } from '@presentation/errorObjects';
+import { InternalError } from 'src/presentation/errorObjects/[exports]';
 import type { Request, Response, NextFunction } from 'express';
 
 export function globalErrorHandler(err: Error, req: Request, res: Response, next: NextFunction) {

@@ -1,5 +1,5 @@
 import type { ObjectId } from 'mongodb';
-import type { IDocumentExtensions } from '@domain/types';
+import type { IDocumentExtensions } from 'src/domain/types/[exports]';
 
 export interface IRawUser {
     email: string;

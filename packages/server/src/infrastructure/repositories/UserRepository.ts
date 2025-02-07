@@ -1,7 +1,7 @@
-import { BaseRepository } from '@infrastructure/repositories';
-import { User } from '@domain/entities';
+import { BaseRepository } from 'src/infrastructure/repositories/[exports]';
+import { User } from 'src/domain/entities/[exports]';
 import type { Collection } from 'mongodb';
-import type { IUser, IUserRepository } from '@domain/types';
+import type { IUser, IUserRepository } from 'src/domain/types/[exports]';
 
 export class UserRepository extends BaseRepository<IUser, User> implements IUserRepository {
     constructor(collection: Collection<IUser>) {

@@ -1,7 +1,7 @@
-import { getCollection } from "@infrastructure/databases";
-import { UserRepository } from "@infrastructure/repositories";
-import { GetUsersController } from "@presentation/controllers";
-import { GetUsersUseCase } from "@app/useCases";
+import { getCollection } from "src/infrastructure/databases/[exports]";
+import { UserRepository } from "src/infrastructure/repositories/[exports]";
+import { GetUsersController } from "src/presentation/controllers/[exports]";
+import { GetUsersUseCase } from "src/app/useCases/[exports]";
 
 export const getUsersService = new GetUsersController(
     new GetUsersUseCase(

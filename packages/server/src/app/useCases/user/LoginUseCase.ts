@@ -1,6 +1,6 @@
-import { SafeUser } from "@app/dtos";
-import { DatabaseError, ProhibitedError } from "@presentation/errorObjects";
-import type { ILoginCredentials, IUserRepository, TUserLoginUseCase } from "@domain/types";
+import { SafeUser } from "src/app/dtos/[exports]";
+import { DatabaseError, ProhibitedError } from "src/presentation/errorObjects/[exports]";
+import type { ILoginCredentials, IUserRepository, TUserLoginUseCase } from "src/domain/types/[exports]";
 
 export class LoginUseCase implements TUserLoginUseCase {
     constructor(private _userRepository: IUserRepository) {}

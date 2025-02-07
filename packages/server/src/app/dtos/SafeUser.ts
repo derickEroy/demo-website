@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import type { ISafeUser, IUser } from '@domain/types';
+import type { ISafeUser, IUser } from 'src/domain/types/[exports]';
 
 export class SafeUser implements ISafeUser {
     _id: ObjectId;

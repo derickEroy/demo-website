@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { HttpRequest } from '@presentation/http';
-import type { IController, TRequestProps } from '@domain/types';
+import { HttpRequest } from 'src/presentation/http/[exports]';
+import type { IController, TRequestProps } from 'src/domain/types/[exports]';
 
 export function expressAdapter(service: IController<TRequestProps, unknown>) {
     return async (req: Request, res: Response, next: NextFunction) => {

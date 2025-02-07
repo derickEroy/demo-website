@@ -1,7 +1,7 @@
-import { UserRepository } from '@infrastructure/repositories';
-import { getCollection } from '@infrastructure/databases';
-import { LoginUseCase } from '@app/useCases';
-import { LoginController } from '@presentation/controllers';
+import { UserRepository } from 'src/infrastructure/repositories/[exports]';
+import { getCollection } from 'src/infrastructure/databases/[exports]';
+import { LoginUseCase } from 'src/app/useCases/[exports]';
+import { LoginController } from 'src/presentation/controllers/[exports]';
 
 export const loginService = new LoginController(
     new LoginUseCase(

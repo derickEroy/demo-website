@@ -1,7 +1,7 @@
-import { getCollection } from "@infrastructure/databases";
-import { CreateChatUseCase } from "@app/useCases";
-import { ChatRepository } from "@infrastructure/repositories";
-import { CreateChatController } from "@presentation/controllers";
+import { getCollection } from "src/infrastructure/databases/[exports]";
+import { CreateChatUseCase } from "src/app/useCases/[exports]";
+import { ChatRepository } from "src/infrastructure/repositories/[exports]";
+import { CreateChatController } from "src/presentation/controllers/[exports]";
 
 export const createService = new CreateChatController(
     new CreateChatUseCase(

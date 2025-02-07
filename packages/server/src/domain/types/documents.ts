@@ -1,5 +1,5 @@
 import type { Document } from 'mongodb';
-import type { IRawUser, IDocumentExtensions, IRawChat } from '@domain/types';
+import type { IRawUser, IDocumentExtensions, IRawChat } from 'src/domain/types/[exports]';
 
 export interface IUser extends IRawUser, IDocumentExtensions, Document {}
 
