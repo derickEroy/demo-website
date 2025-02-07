@@ -1,7 +1,7 @@
-import { SafeUser } from 'src/app/dtos';
-import { User } from 'src/domain/entities';
-import { DatabaseError } from 'src/presentation/errorObjects';
-import type { IRawUser, IUserRepository, TUserRegisterUseCase } from 'src/domain/types';
+import { SafeUser } from '@app/dtos';
+import { User } from '@domain/entities';
+import { DatabaseError } from '@presentation/errorObjects';
+import type { IRawUser, IUserRepository, TUserRegisterUseCase } from '@domain/types';
 
 export class RegisterUseCase implements TUserRegisterUseCase {
     constructor(private _userRepository: IUserRepository) {}

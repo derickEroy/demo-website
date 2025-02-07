@@ -1,5 +1,5 @@
-import { HttpResponse } from "src/presentation/http";
-import type { TGetUsersController, IRequest, IUserQuery, TGetUsersUseCase } from "src/domain/types";
+import { HttpResponse } from "@presentation/http";
+import type { TGetUsersController, IRequest, IUserQuery, TGetUsersUseCase } from "@domain/types";
 
 export class GetUsersController implements TGetUsersController {
     constructor(private _useCase: TGetUsersUseCase) {}

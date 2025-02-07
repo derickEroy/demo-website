@@ -1,4 +1,4 @@
-import type { IProhibitedError, TCredentials } from "src/domain/types";
+import type { IProhibitedError, TCredentials } from "@domain/types";
 
 export class ProhibitedError extends Error implements IProhibitedError {
     constructor(

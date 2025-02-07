@@ -8,10 +8,10 @@ import express from 'express';
 import cors from 'cors';
 import session from 'express-session';
 import store from 'connect-mongo';
-import { clientUrl, port, secretKey } from 'src/configs/[exports]';
-import { client as dbClient, connect as dbConnect } from 'src/infrastructure/databases';
-import { userRouter, chatRouter } from 'src/infrastructure/routers';
-import {  globalErrorHandler } from 'src/infrastructure/middlewares';
+import { clientUrl, port, secretKey } from '@configs';
+import { client as dbClient, connect as dbConnect } from '@infrastructure/databases';
+import { userRouter, chatRouter } from '@infrastructure/routers';
+import {  globalErrorHandler } from '@infrastructure/middlewares';
 
 (async () => {
     const app = express();

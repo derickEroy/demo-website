@@ -1,5 +1,5 @@
-import type { HttpRequest, HttpResponse } from "src/presentation/http";
-import type { ILoginCredentials, IRawUser, ISafeUser, IDatabaseError, IInternalError, IUserQuery, TRequestProps, IRawChat, IChat } from "src/domain/types"
+import type { HttpRequest, HttpResponse } from "@presentation/http";
+import type { ILoginCredentials, IRawUser, ISafeUser, IDatabaseError, IInternalError, IUserQuery, TRequestProps, IRawChat, IChat } from "@domain/types"
 
 export interface IController<T extends TRequestProps, U> {
     execute(data: HttpRequest<T>): Promise<HttpResponse<U | IInternalError>>;

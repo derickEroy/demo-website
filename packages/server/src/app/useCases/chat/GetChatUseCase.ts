@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb";
-import { DatabaseError } from "src/presentation/errorObjects";
-import type { IChat, IChatRepository, TGetChatUseCase } from "src/domain/types";
+import { DatabaseError } from "@presentation/errorObjects";
+import type { IChat, IChatRepository, TGetChatUseCase } from "@domain/types";
 
 export class GetChatUseCase implements TGetChatUseCase {
     constructor(private _chatRepository: IChatRepository) {}

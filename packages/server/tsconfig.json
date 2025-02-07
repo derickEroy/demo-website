@@ -34,23 +34,23 @@
     // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
-      "@app/dtos": ["./src/app/dtos/_exports"],
-      "@app/services": ["./src/app/services/_exports"],
-      "@app/useCases": ["./src/app/useCases/_exports"],
-      "@configs": ["./src/configs/_exports"],
-      "@domain/entities": ["./src/domain/entities/_exports"],
-      "@domain/types": ["./src/domain/types/_exports"],
-      "@domain/valueObjects": ["./src/domain/valueObjects/_exports"],
-      "@infrastructure/adapters": ["./src/infrastructure/adapters/_exports"],
-      "@infrastructure/databases": ["./src/infrastructure/databases/_exports"],
-      "@infrastructure/middlewares": ["./src/infrastructure/middlewares/_exports"],
-      "@infrastructure/providers": ["./src/infrastructure/providers/_exports"],
-      "@infrastructure/repositories": ["./src/infrastructure/repositories/_exports"],
-      "@infrastructure/routers": ["./src/infrastructure/routers/_exports"],
-      "@infrastructure/validators": ["./src/infrastructure/validators/_exports"],
-      "@presentation/controllers": ["./src/presentation/controllers/_exports"],
-      "@presentation/errorObjects": ["./src/presentation/errorObjects/_exports"],
-      "@presentation/http": ["./src/presentation/http/_exports"]
+      "@app/dtos": ["./src/app/dtos/index"],
+      "@app/services": ["./src/app/services/index"],
+      "@app/useCases": ["./src/app/useCases/index"],
+      "@configs": ["./src/configs/index"],
+      "@domain/entities": ["./src/domain/entities/index"],
+      "@domain/types": ["./src/domain/types/index"],
+      "@domain/valueObjects": ["./src/domain/valueObjects/index"],
+      "@infrastructure/adapters": ["./src/infrastructure/adapters/index"],
+      "@infrastructure/databases": ["./src/infrastructure/databases/index"],
+      "@infrastructure/middlewares": ["./src/infrastructure/middlewares/index"],
+      "@infrastructure/providers": ["./src/infrastructure/providers/index"],
+      "@infrastructure/repositories": ["./src/infrastructure/repositories/index"],
+      "@infrastructure/routers": ["./src/infrastructure/routers/index"],
+      "@infrastructure/validators": ["./src/infrastructure/validators/index"],
+      "@presentation/controllers": ["./src/presentation/controllers/index"],
+      "@presentation/errorObjects": ["./src/presentation/errorObjects/index"],
+      "@presentation/http": ["./src/presentation/http/index"]
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */

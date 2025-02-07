@@ -1,4 +1,4 @@
-import type { IChat, ILoginCredentials, IRawChat, IRawUser, ISafeUser, IUserQuery } from 'src/domain/types';
+import type { IChat, ILoginCredentials, IRawChat, IRawUser, ISafeUser, IUserQuery } from '@domain/types';
 
 export interface IUseCase<T, U> {
     execute(data: T): Promise<U>;
