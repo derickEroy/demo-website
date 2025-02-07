@@ -1,4 +1,4 @@
-import { Hasher } from 'src/infrastructure/providers/[exports]';
+import { Hasher } from 'src/infrastructure/providers';
 
 export class Password {
     private _hasher = new Hasher();

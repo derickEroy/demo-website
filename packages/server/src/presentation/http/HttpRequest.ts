@@ -1,4 +1,4 @@
-import type { IRequest, TRequestProps } from 'src/domain/types/[exports]';
+import type { IRequest, TRequestProps } from 'src/domain/types';
 
 export class HttpRequest<T extends TRequestProps> implements IRequest<T> {
     body: T['body'];

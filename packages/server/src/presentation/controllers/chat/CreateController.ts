@@ -1,6 +1,6 @@
-import { HttpResponse } from "src/presentation/http/[exports]";
-import { SchemaError } from "src/presentation/errorObjects/[exports]";
-import type { IRawChat, IRequest, TCreateChatController, TCreateChatUseCase } from "src/domain/types/[exports]";
+import { HttpResponse } from "src/presentation/http";
+import { SchemaError } from "src/presentation/errorObjects";
+import type { IRawChat, IRequest, TCreateChatController, TCreateChatUseCase } from "src/domain/types";
 
 export class CreateChatController implements TCreateChatController {
     constructor(private _useCase: TCreateChatUseCase) {}

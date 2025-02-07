@@ -9,9 +9,9 @@ import cors from 'cors';
 import session from 'express-session';
 import store from 'connect-mongo';
 import { clientUrl, port, secretKey } from 'src/configs/[exports]';
-import { client as dbClient, connect as dbConnect } from 'src/infrastructure/databases/[exports]';
-import { userRouter, chatRouter } from 'src/infrastructure/routers/[exports]';
-import {  globalErrorHandler } from 'src/infrastructure/middlewares/[exports]';
+import { client as dbClient, connect as dbConnect } from 'src/infrastructure/databases';
+import { userRouter, chatRouter } from 'src/infrastructure/routers';
+import {  globalErrorHandler } from 'src/infrastructure/middlewares';
 
 (async () => {
     const app = express();

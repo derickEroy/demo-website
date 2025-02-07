@@ -1,6 +1,6 @@
 import { z, ZodSchema } from "zod";
 import { ObjectId } from "mongodb";
-import type { IChat, IUser } from "src/domain/types/[exports]";
+import type { IChat, IUser } from "src/domain/types";
 
 export const userSchema: ZodSchema<IUser> = z.object({
     _id: z.instanceof(ObjectId),

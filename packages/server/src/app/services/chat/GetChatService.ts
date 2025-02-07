@@ -1,7 +1,7 @@
-import { getCollection } from "src/infrastructure/databases/[exports]";
-import { GetChatUseCase } from "src/app/useCases/[exports]";
-import { GetChatController } from "src/presentation/controllers/[exports]";
-import { ChatRepository } from "src/infrastructure/repositories/[exports]";
+import { getCollection } from "src/infrastructure/databases";
+import { GetChatUseCase } from "src/app/useCases";
+import { GetChatController } from "src/presentation/controllers";
+import { ChatRepository } from "src/infrastructure/repositories";
 
 export const getChatService = new GetChatController(
     new GetChatUseCase(

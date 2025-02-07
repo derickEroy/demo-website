@@ -1,6 +1,6 @@
-import { HttpResponse } from 'src/presentation/http/[exports]';
-import { DatabaseError, SchemaError } from 'src/presentation/errorObjects/[exports]';
-import type { IRawUser, TUserRegisterController, TUserRegisterUseCase, IRequest } from 'src/domain/types/[exports]';
+import { HttpResponse } from 'src/presentation/http';
+import { DatabaseError, SchemaError } from 'src/presentation/errorObjects';
+import type { IRawUser, TUserRegisterController, TUserRegisterUseCase, IRequest } from 'src/domain/types';
 
 export class RegisterController implements TUserRegisterController {
     constructor(private _useCase: TUserRegisterUseCase) {}

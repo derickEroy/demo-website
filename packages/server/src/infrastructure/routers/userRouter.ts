@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { expressAdapter } from 'src/infrastructure/adapters/[exports]';
-import { registerService, loginService, getUsersService } from 'src/app/services/[exports]';
+import { expressAdapter } from 'src/infrastructure/adapters';
+import { registerService, loginService, getUsersService } from 'src/app/services';
 
 export const userRouter = Router();
 

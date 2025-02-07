@@ -1,6 +1,6 @@
-import { HttpResponse } from "src/presentation/http/[exports]";
-import { DatabaseError, ProhibitedError } from "src/presentation/errorObjects/[exports]";
-import type { TUserLoginController, ILoginCredentials, IRequest, TUserLoginUseCase } from "src/domain/types/[exports]";
+import { HttpResponse } from "src/presentation/http";
+import { DatabaseError, ProhibitedError } from "src/presentation/errorObjects";
+import type { TUserLoginController, ILoginCredentials, IRequest, TUserLoginUseCase } from "src/domain/types";
 
 export class LoginController implements TUserLoginController {
     constructor(private _useCase: TUserLoginUseCase) {}
